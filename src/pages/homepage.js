@@ -77,10 +77,11 @@ const HomePage = function () {
                   <label for="Tab" class="sr-only">Tab</label>
 
                   <select id="Tab" class="w-full rounded-md border-gray-200">
-                    <option>details</option>
-                    <option>Messages</option>
-                    <option>Archive</option>
-                    <option select>Notifications</option>
+                    <option>Phổ biến</option>
+                    <option>Bán chạy</option>
+                    <option>Hàng mới</option>
+                    <option select>Giá thấp</option>
+                    <option select>Giá cao</option>
                   </select>
                 </div>
 
@@ -89,32 +90,41 @@ const HomePage = function () {
                     <nav class="-mb-px flex gap-6" aria-label="Tabs">
                       <a
                         href="/details"
-                        class="shrink-0 border-b-2 border-transparent px-1 pb-4 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
-                      >
-                        details
-                      </a>
-
-                      <a
-                        href="#"
-                        class="shrink-0 border-b-2 border-transparent px-1 pb-4 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
-                      >
-                        Messages
-                      </a>
-
-                      <a
-                        href="#"
-                        class="shrink-0 border-b-2 border-transparent px-1 pb-4 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
-                      >
-                        Archive
-                      </a>
-
-                      <a
-                        href="#"
                         class="shrink-0 border-b-2 border-sky-500 px-1 pb-4 text-sm font-medium text-sky-600"
+                      >
+                        Phổ biến
+                      </a>
+
+                      <a
+                        href="#"
+                        class="shrink-0 border-b-2 border-transparent px-1 pb-4 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                      >
+                        Bán chạy
+                      </a>
+
+                      <a
+                        href="#"
+                        class="shrink-0 border-b-2 border-transparent px-1 pb-4 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                      >
+                        Hàng mới
+                      </a>
+
+                      <a
+                        href="#"
+                        class="shrink-0 border-b-2 border-transparent px-1 pb-4 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
                         aria-current="page"
                       >
-                        Notifications
+                        Giá thấp
                       </a>
+
+                      <a
+                        href="#"
+                        class="shrink-0 border-b-2 border-transparent px-1 pb-4 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                        aria-current="page"
+                      >
+                        Giá cao
+                      </a>
+
                     </nav>
                   </div>
                 </div>
