@@ -1,6 +1,6 @@
 import './notfound.css'
 const NotFound = function () {
-	return `
+	return /*html */ `
     
     <section class="page_404">
 	<div class="container">
@@ -20,7 +20,7 @@ const NotFound = function () {
 		
 		<p>the page you are looking for not avaible!</p>
 		
-		<a href="../../../index.html" class="link_404">Go to Home</a>
+		<a href="/" class="link_404">Go to Home</a>
 	</div>
 		</div>
 		</div>

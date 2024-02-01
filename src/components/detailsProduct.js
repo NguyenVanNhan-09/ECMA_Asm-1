@@ -1,4 +1,6 @@
-const DetailsProduct = function() {
+import data from '../../db.json' assert { type:'json' }
+const DetailsProduct = function (id) {
+    const book = data.books.find((item) => item.id == id);
     return /*html*/ `
     <div class="grid grid-cols-1 gap-4">
         <div class="mt-[20px] rounded-lg bg-gray-200 overflow-hidden">
@@ -7,7 +9,7 @@ const DetailsProduct = function() {
                     <div class="flex flex-wrap mb-24 -mx-4">
 
                         <div class="w-full px-4 mb-8 md:w-1/3 md:mb-0 border-r border-solid border-[#F2F2F2]">
-                            <div class="sticky top-0 overflow-hidden ">
+                            <div class="sticky top-0 overflow-hidden">
                                 <div class="relative mb-6 lg:mb-10 lg:h-96">
                                     <a class="absolute left-0 transform lg:ml-2 top-1/2 translate-1/2" href="#">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-5 h-5 text-blue-500 bi bi-chevron-left dark:text-blue-200" viewBox="0 0 16 16">
@@ -15,7 +17,7 @@ const DetailsProduct = function() {
                                             </path>
                                         </svg>
                                     </a>
-                                    <img class="object-contain w-full lg:h-full" src="./../../public/product-1.jpg" alt="">
+                                    <img class="object-contain w-full lg:h-full" src="${book.images[0] ? `${book.images[0].base_url}`:"chưa cập nhật"}" alt="chưa cập nhật">
                                     <a class="absolute right-0 transform lg:mr-2 top-1/2 translate-1/2" href="#">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-5 h-5 text-blue-500 bi bi-chevron-right dark:text-blue-200" viewBox="0 0 16 16">
                                             <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
@@ -26,22 +28,23 @@ const DetailsProduct = function() {
                                 <div class="flex-wrap hidden -mx-2 md:flex">
                                     <div class="w-1/2 p-2 sm:w-1/4">
                                         <a class="block border border-gray-200 hover:border-blue-400 dark:border-gray-700 dark:hover:border-blue-300" href="#">
-                                        <img class="object-contain w-full lg:h-28" src="./../../public/sub-1-product-1.png" alt="">
+                                        <img class="object-contain w-full lg:h-28" src="${book.images[0] ? `${book.images[0].base_url}`:"chưa cập nhật"}" alt="chưa cập nhật">
                                         </a>
                                     </div>
                                     <div class="w-1/2 p-2 sm:w-1/4">
                                         <a class="block border border-gray-200 hover:border-blue-400 dark:border-gray-700 dark:hover:border-blue-300" href="#">
-                                        <img class="object-contain w-full lg:h-28" src="./../../public/sub-2-product-1.png" alt="">
+                                        <img class="object-contain w-full lg:h-28" src="${book.images[1] ? `${book.images[1].base_url}`:"chưa cập nhật"}" alt="chưa cập nhật">
                                         </a>
                                     </div>
                                     <div class="w-1/2 p-2 sm:w-1/4">
                                         <a class="block border border-gray-200 hover:border-blue-400 dark:border-gray-700 dark:hover:border-blue-300" href="#">
-                                        <img class="object-contain w-full lg:h-28" src="./../../public/sub-3-product-1.png" alt="">
+                                        <img class="object-contain w-full lg:h-28" src="${book.images[2] ? `${book.images[2].base_url}`:"chưa cập nhật"}" alt="chưa cập nhật">
+                                        
                                         </a>
                                     </div>
                                     <div class="w-1/2 p-2 sm:w-1/4">
                                         <a class="block border border-gray-200 hover:border-blue-400 dark:border-gray-700 dark:hover:border-blue-300" href="#">
-                                        <img class="object-contain w-full lg:h-28" src="../../public/sub-4-product-1.png" alt="">
+                                        <img class="object-contain w-full lg:h-28" src="${book.images[3] ? `${book.images[3].base_url}`:"chưa cập nhật"}" alt="chưa cập nhật">
                                         </a>
                                     </div>
                                 </div>
@@ -52,7 +55,7 @@ const DetailsProduct = function() {
                             <div class="lg:pl-20">
                                 <div class="mb-6 ">
                                     <h2 class="max-w-xl mt-6 mb-6 text-xl font-semibold leading-loose tracking-wide text-[#242424] md:text-2xl">
-                                        Càng Kỷ Luật, Càng Tự Do
+                                        ${book.name}
                                     </h2>
                                     <div class="flex flex-wrap items-center mb-6">
                                         <ul class="flex mb-4 mr-2 lg:mb-0">
@@ -103,8 +106,8 @@ const DetailsProduct = function() {
                                         </a>
                                     </div>
                                     <p class="inline-block text-2xl font-semibold text-gray-700 dark:text-gray-400 ">
-                                        <span>83.930 ₫</span>
-                                        <span class="ml-3 text-base font-normal text-gray-500 line-through dark:text-gray-400">109.000 ₫</span>
+                                        <span>${book.list_price}đ</span>
+                                        <span class="ml-3 text-base font-normal text-gray-500 line-through dark:text-gray-400">${book.original_price}₫</span>
                                     </p>
                                 </div>
                                 <div class="flex flex-wrap items-center mb-6">

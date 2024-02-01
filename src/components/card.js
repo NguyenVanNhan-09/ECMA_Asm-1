@@ -1,7 +1,7 @@
 const Card = function (book) {
   return /*html*/`
   <div class = "overflow-hidden ">
-    <a href="/details" class="group block overflow-hidden h-full">
+    <a href="/book/${book.id}" class="group block overflow-hidden h-full">
       <img
         class="h-[180px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[200px] "
         src="${book.images[0].base_url}"
