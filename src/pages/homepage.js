@@ -89,7 +89,7 @@ const HomePage = function () {
                   <div class="border-b border-gray-200">
                     <nav class="-mb-px flex gap-6" aria-label="Tabs">
                       <a
-                        href="/details"
+                        href="#"
                         class="shrink-0 border-b-2 border-sky-500 px-1 pb-4 text-sm font-medium text-sky-600"
                       >
                         Phổ biến

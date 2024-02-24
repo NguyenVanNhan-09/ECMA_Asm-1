@@ -28,7 +28,6 @@ const Details = function(id) {
             </div>
         </div>
         ${Footer()}
-    
     `
 }
 
